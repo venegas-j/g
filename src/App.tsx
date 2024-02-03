@@ -1,34 +1,102 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 
+const phrases = [
+  "NO",
+  "TA AYAW AH",
+  "SIGI NA BOIEIEIE",
+  "DAMOT NAMAN",
+  "AS A FRIEND LANG NAMAN AY",
+  "KUNAT MO NAMAN HMP",
+  "HJAHAHAHAHAH INIS",
+  "DI TALAGA PWEDE MAG NO",
+  "TIGNAN MO YUNG YES LUMALAKE",
+  "HAHAHAHAHAHAHHA",
+  "NO",
+  "TA AYAW AH",
+  "SIGI NA BOIEIEIE",
+  "DAMOT NAMAN",
+  "AS A FRIEND LANG NAMAN AY",
+  "KUNAT MO NAMAN HMP",
+  "HJAHAHAHAHAH INIS",
+  "DI TALAGA PWEDE MAG NO",
+  "TIGNAN MO YUNG YES LUMALAKE",
+  "HAHAHAHAHAHAHHA",
+  "NO",
+  "TA AYAW AH",
+  "SIGI NA BOIEIEIE",
+  "DAMOT NAMAN",
+  "AS A FRIEND LANG NAMAN AY",
+  "KUNAT MO NAMAN HMP",
+  "HJAHAHAHAHAH INIS",
+  "DI TALAGA PWEDE MAG NO",
+  "TIGNAN MO YUNG YES LUMALAKE",
+  "HAHAHAHAHAHAHHA",
+];
+
 function App() {
-  const [count, setCount] = useState(0);
+  const [noCount, setCount] = useState(0);
+  const [yesPressed, setYesPressed] = useState(false);
+  const yesButtonSize = noCount * 20 + 16;
+
+  function handleNoClick() {
+    setCount(noCount + 1);
+  }
+
+  function getNoButtonText() {
+    return phrases[Math.min(noCount, phrases.length - 1)];
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="valentine-container">
+      {yesPressed ? (
+        <>
+          <img
+            alt="bears kissing"
+            src="https://media1.tenor.com/m/u1OqA3bNXyQAAAAC/hi-waving.gif"
+          />
+          <div
+            style={{
+              fontSize: "27px",
+              fontFamily: "Verdana, sans-serif",
+              fontWeight: "bold",
+            }}
+            className="text"
+          >
+            YUNAY BIGWASAN KITA AT HAHAHAHAHA
+          </div>
+        </>
+      ) : (
+        <>
+          <img
+            alt="bear with hearts"
+            src="https://gifdb.com/images/high/cute-donkey-shrek-prj7v6q9sqwlsz7k.gif"
+          />
+
+          <div
+            style={{
+              fontSize: "27px",
+              fontFamily: "Verdana, sans-serif",
+              fontWeight: "bold",
+            }}
+          >
+            HOY DATE TAYO SA FEBRUARY 14!
+          </div>
+          <div>
+            <button
+              className="yesButton"
+              style={{ fontSize: yesButtonSize }}
+              onClick={() => setYesPressed(true)}
+            >
+              Yes
+            </button>
+            <button onClick={handleNoClick} className="noButton">
+              {getNoButtonText()}
+            </button>
+          </div>
+        </>
+      )}
+    </div>
   );
 }
 
