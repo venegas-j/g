@@ -1,3 +1,8 @@
+body {
+  background-color: #fc848a; /* Light gray background color */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
 .valentine-container {
   display: flex;
   flex-direction: column;
@@ -18,8 +23,9 @@
 .noButton {
   background-color: #f44336; /* Red color */
   color: white;
-  padding: 10px 15px; /* Adjust padding as needed */
+  padding: 10px 20px; /* Adjust padding as needed */
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-right: 10px;
 }

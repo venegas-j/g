@@ -60,6 +60,7 @@ function App() {
               fontSize: "27px",
               fontFamily: "Verdana, sans-serif",
               fontWeight: "bold",
+              color: "white",
             }}
             className="text"
           >
@@ -78,6 +79,7 @@ function App() {
               fontSize: "27px",
               fontFamily: "Verdana, sans-serif",
               fontWeight: "bold",
+              color: "white",
             }}
           >
             HOY DATE TAYO SA FEBRUARY 14!
